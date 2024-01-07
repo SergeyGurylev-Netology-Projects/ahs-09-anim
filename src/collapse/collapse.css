@@ -1,0 +1,77 @@
+:root {
+    --height-collapse-from: 50px;
+    --height-collapse-to: 200px;
+}
+
+.collapse {
+    margin-top: 10px;
+    margin-left: 10px;
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    background-color: lightgrey;
+    overflow-y: hidden;
+}
+
+.collapse.animate {
+    animation-name: collapse-resize;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.collapse-btn {
+    font-size: inherit;
+    color: white;
+    background-color: darkblue;
+    margin: 10px;
+    padding: 0.7rem;
+    border: 0;
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+}
+
+.collapse-btn:hover {
+    background-color: mediumblue;
+}
+
+.collapse-btn:active {
+    outline: 3px dodgerblue solid;
+}
+
+.collapse-msg {
+    display: none;
+    margin: 10px;
+    width: 300px;
+    padding: 10px;
+    border: 1px gray solid;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.collapse-msg.visible {
+    display: block;
+}
+
+@keyframes collapse-resize {
+    from {
+        height: var(--height-collapse-from);;
+    }
+    15% {
+        height: var(--height-collapse-from);
+    }
+    40% {
+        height: var(--height-collapse-to);
+    }
+    60% {
+        height: var(--height-collapse-to);
+    }
+    85% {
+        height: var(--height-collapse-from);
+    }
+    to {
+        height: var(--height-collapse-from);;
+    }
+}
